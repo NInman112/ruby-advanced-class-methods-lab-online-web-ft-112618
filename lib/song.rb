@@ -49,8 +49,8 @@ class Song
   def self.new_from_filename(name)
     data = name.split(/[-.]/)
     song = Song.new
-    song.artist_name = data[0].strip
-    song.name = data[1].strip
+    song.artist_name = data[0].chop
+    song.name = data[1][1..-1]
     #binding.pry
     song
   end
@@ -58,8 +58,8 @@ class Song
   def self.create_from_filename(name)
     data = name.split(/[-.]/)
     song = Song.create
-    song.artist_name = data[0].strip
-    song.name = data[1].strip
+    song.artist_name = data[0].chop
+    song.name = data[1][1..-1]
     #binding.pry
     song
   end
